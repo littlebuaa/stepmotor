@@ -9,17 +9,23 @@ GP.setup(16,  GP.OUT)
 GP.setup(20,  GP.OUT)
 GP.setup(21,  GP.OUT)
 
+def turn(B1, B2, B3, B4):
+	GP.output(12,B1)
+	GP.output(16,B2)
+	GP.output(20,B3)
+	GP.output(21,B4)
+	time.sleep(1)
+
 #GP.output(4,1)
+i= 20
+while i> 0:
+	turn(False,False,False,True)
+	turn(False,False,True,False)
+	turn(False,True,False,False)
+	turn(True,False,False,False)
+	i = i-1
 
- 
-def turn():
-	GP.output(12,False)
-	GP.output(16,False)
-	GP.output(20,False)
-	GP.output(21,True)
-	time.sleep(5)
-def stop():
-	pass
+turn(False,False,False,False)
 
-turn()
+
 
