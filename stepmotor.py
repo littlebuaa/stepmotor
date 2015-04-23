@@ -53,7 +53,7 @@ class Motor(object):
         GPIO.output(self.P2, 0)
         GPIO.output(self.P3, 0)
         GPIO.output(self.P4, 0)
-        for i in range(big_steps):
+        for i in range(int(big_steps)):
             GPIO.output(self.P1, 0)
             sleep(self._T)
             GPIO.output(self.P3, 1)
@@ -76,7 +76,7 @@ class Motor(object):
         GPIO.output(self.P2, 0)
         GPIO.output(self.P3, 0)
         GPIO.output(self.P4, 0)
-        for i in range(big_steps):
+        for i in range(int(big_steps)):
             GPIO.output(self.P3, 0)
             sleep(self._T)
             GPIO.output(self.P1, 1)

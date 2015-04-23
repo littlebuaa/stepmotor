@@ -1,7 +1,6 @@
 import RPi.GPIO as GP
 import time
 
-
 GP.setmode(GP.BCM)
 #GP.setup(4,   GP.OUT)
 GP.setup(12,  GP.OUT)
@@ -14,10 +13,10 @@ def turn(B1, B2, B3, B4):
 	GP.output(16,B2)
 	GP.output(20,B3)
 	GP.output(21,B4)
-	time.sleep(1)
+	time.sleep(0.005)
 
 #GP.output(4,1)
-i= 20
+i= 1000
 while i> 0:
 	turn(False,False,False,True)
 	turn(False,False,True,False)
@@ -26,6 +25,6 @@ while i> 0:
 	i = i-1
 
 turn(False,False,False,False)
-
+GP.cleanup()
 
 
