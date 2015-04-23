@@ -41,10 +41,10 @@ class Motor(object):
         steps = (steps % self.steps_per_rev)
         if steps > self.steps_per_rev / 2:
             steps -= self.steps_per_rev
-            print("moving " + steps + " steps")
+            print("moving %d steps."%steps)
             self._move_acw(-steps / 8)
         else:
-            print(moving " + steps + " steps")
+            print("moving %d steps."%steps)
             self._move_cw(steps / 8)
         self.step_angle = target_step_angle
  
@@ -95,10 +95,10 @@ class Motor(object):
             sleep(self._T)
  
 if __name__ == "__main__":
-    GPIO.setmode(GPIO.BOARD)
+    GPIO.setmode(GPIO.BCM)
     m = Motor([12,16,20,21])
     m.rpm = 5
-    print "Pause in seconds: " + `m._T`
+    print("Pause in seconds: %d."% m._T)
     m.move_to(90)
     sleep(1)
     m.move_to(0)
